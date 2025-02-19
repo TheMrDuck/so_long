@@ -6,13 +6,11 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:05:36 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/18 15:29:52 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/19 19:17:13 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-
 
 void	error_escaper(char *msg)
 {
@@ -20,7 +18,7 @@ void	error_escaper(char *msg)
 	exit(1);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_gelements	game_elements;
 

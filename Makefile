@@ -1,4 +1,4 @@
-SRC = main.c parser.c
+SRC = main.c parser.c so_long_utils.c flood_fill.c
 
 OBJ = $(SRC:.c=.o)
 
