@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:03:52 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/22 19:43:10 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/22 20:18:24 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	up(t_gelements *game_elements);
 void	down(t_gelements *game_elements);
 void	left(t_gelements *game_elements);
 void	right(t_gelements *game_elements);
+int		win_closer(t_gelements *game_elements);
 
 #endif
