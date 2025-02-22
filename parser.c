@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:46:42 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/19 20:00:09 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/22 19:43:37 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,5 @@ void	map_parser(char *map, t_gelements *game_elements)
 	player_location(game_elements);
 	map_edges_checker(game_elements);
 	flood_fill_caller(game_elements);
+	game_elements->moves = 0;
 }

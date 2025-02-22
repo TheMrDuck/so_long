@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:03:52 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/19 19:16:42 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/22 19:43:10 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <mlx.h>
 # include "libft/libft.h"
 # include "ft_printf.h"
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 # define PIC_SIZE 50
 
@@ -36,13 +38,13 @@ typedef struct s_game_elements
 {
 	void		*mlx;
 	void		*win_ptr;
+	void		*image;
 	int			player;
 	int			collectable;
 	int			exit;
 	int			player_x;
 	int			player_y;
-	int			exit_x;
-	int			exit_y;
+	int			moves;
 	int			map_width;
 	int			map_height;
 	char		**map;
@@ -60,5 +62,11 @@ void	free_2d(char **arr);
 void	flood_fill_caller(t_gelements *game_elements);
 void	player_location(t_gelements *game_elements);
 void	map_edges_checker(t_gelements *game_elements);
+void	render_map(t_gelements *game_elements);
+void	keybinds_handling(t_gelements *game_elements);
+void	up(t_gelements *game_elements);
+void	down(t_gelements *game_elements);
+void	left(t_gelements *game_elements);
+void	right(t_gelements *game_elements);
 
 #endif
