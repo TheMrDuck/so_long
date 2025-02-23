@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:10:07 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/22 20:36:01 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/23 18:33:05 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	player_location(t_gelements *game_elements)
 		{
 			if (game_elements -> map[row][col] == 'P')
 			{
-				/game_elements -> player_x = col;
+				game_elements -> player_x = col;
 				game_elements -> player_y = row;
 				return ;
 			}
@@ -44,15 +44,14 @@ void	map_copier(t_gelements *game_elements)
 		row++;
 	game_elements -> dup_map = malloc(sizeof(char *) * (row + 1));
 	if (!game_elements->dup_map)
-		error_escaper("Error\nmalloc failed!\n");
+		win_closer(game_elements, "Error\nmalloc failed!\n");
 	row = 0;
 	while (game_elements -> map[row])
 	{
 		game_elements -> dup_map[row] = ft_strdup(game_elements->map[row]);
 		if (!game_elements->dup_map[row])
 		{
-			free_2d(game_elements->dup_map);
-			error_escaper("Error\nmalloc failed!\n");
+			win_closer(game_elements, "Erorr\nMalloc Failed\n");
 		}
 		row++;
 	}
@@ -108,7 +107,7 @@ void	map_edges_checker(t_gelements *game_elements)
 	{
 		if (game_elements -> map[0][col] != '1' || \
 		game_elements -> map[game_elements -> map_height][col] != '1')
-			map_freeing(game_elements, "Error\nMap is no valid!\n");
+			win_closer(game_elements, "Error\nMap is no valid!\n");
 		col++;
 	}
 	while (game_elements -> map[game_elements -> map_height])
@@ -117,7 +116,7 @@ void	map_edges_checker(t_gelements *game_elements)
 			break ;
 		if (game_elements -> map[row][0] != '1' || \
 		game_elements ->map[row][game_elements -> map_width - 1] != '1')
-			map_freeing(game_elements, "Error\nMap is no valid!\n");
+			win_closer(game_elements, "Error\nMap is no valid!\n");
 		row++;
 	}
 }

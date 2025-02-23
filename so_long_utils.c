@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:17:40 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/22 20:05:32 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:30:39 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,4 @@ void	free_2d(char **arr)
 		i++;
 	}
 	free(arr);
-}
-
-void	map_freeing(t_gelements *game_elements, char *msg)
-{
-	write(2, msg, ft_strlen(msg));
-	free_2d(game_elements -> map);
-	free_2d(game_elements -> dup_map);
-	exit(1);
 }

@@ -5,7 +5,7 @@ OBJ = $(SRC:.c=.o)
 CC = cc
 LIBFT = libft/libft.a
 PRINTF = libft/ft_printf/libftprintf.a
-CFLAGS = -Wall -Wextra -Werror -I. -Ilibft -Ilibft/ft_printf -g
+CFLAGS = -Wall -Wextra -Werror -I. -g -Ilibft -Ilibft/ft_printf
 MLX = -lmlx -lXext -lX11 -lm
 NAME = so_long
 

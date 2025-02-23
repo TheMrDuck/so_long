@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 17:44:14 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/22 20:52:46 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/23 18:28:29 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	win_state(t_gelements *gme)
 	gme -> moves++;
 	ft_printf("Moves: %d\n", gme -> moves);
 	ft_printf("You WIN!\n");
-	win_closer(gme);
+	win_closer(gme, "NULL");
 }
 
 void	up(t_gelements *gme)

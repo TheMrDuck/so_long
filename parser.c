@@ -6,7 +6,7 @@
 /*   By: aswedan <aswedan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:46:42 by aswedan           #+#    #+#             */
-/*   Updated: 2025/02/22 19:43:37 by aswedan          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:30:58 by aswedan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	map_filler(char *map, t_gelements *game_elements)
 	if (file_fd == -1)
 		error_escaper("Error\n Can't open the file!\n");
 	game_elements -> map = malloc(sizeof(char *) * (total_len + 1));
+	if (!game_elements -> map)
+		win_closer(game_elements, "Error\nMalloc failed!");
 	game_elements -> map[i] = get_next_line(file_fd);
 	while (game_elements -> map[i] != 0)
 	{
@@ -80,14 +82,14 @@ void	map_validator(char **map, t_gelements *game_elements)
 		{
 			if (map[i][j] != '1' && map[i][j] != '0' \
 			&& map[i][j] != 'C' && map[i][j] != 'E' && map[i][j] != 'P')
-				map_freeing(game_elements, "Error\nInvalid Character\n");
+				win_closer(game_elements, "Error\nInvalid Character\n");
 			j++;
 		}
 		if ((ft_strlen(map[i]) != ft_strlen(map[i + 1])))
 		{
 			if (ft_strlen(map[i + 1]) == 0)
 				break ;
-			map_freeing(game_elements, "Error\n map not rectangular\n");
+			win_closer(game_elements, "Error\n map not rectangular\n");
 		}
 		i++;
 	}
